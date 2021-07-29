@@ -10,9 +10,8 @@ public class SearchAirplane {
     private Airline airline;
     private double currentFuelCapacity;
 
-
-    public Airplane searchByFuelAirplane(Airline airline, double currentFuelCapacity){
-        if (airline == null && currentFuelCapacity<=0){
+    public Airplane searchByFuelAirplane(Airline airline, double currentFuelCapacity) {
+        if (airline == null && currentFuelCapacity <= 0) {
             return null;
         }
         this.airline = airline;
@@ -20,16 +19,15 @@ public class SearchAirplane {
         return searchNeededAirplane();
     }
 
-    private Airplane searchNeededAirplane () {
+    private Airplane searchNeededAirplane() {
         Iterator<Airplane> neededAirplane = airline.airplaneIterator();
         while (neededAirplane.hasNext()) {
             Airplane airplane = neededAirplane.next();
 
-            if (Double.compare(airplane.getFuelCapacity(), currentFuelCapacity) == 1){
+            if (Double.compare(airplane.getFuelCapacity(), currentFuelCapacity) == 1) {
                 return airplane;
             }
         }
         return null;
     }
-
 }
