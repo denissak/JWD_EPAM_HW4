@@ -1,17 +1,14 @@
 package com.company.sak.hw4.service;
 
-import com.company.sak.hw4.bean.Airplane;
+import com.company.sak.hw4.exception.NoFileException;
 
-import java.util.Comparator;
-import java.util.List;
 
 public interface AirplaneService<T> {
-    double calculateLiftingCapacity();
+    double calculateLiftingCapacity() throws NoFileException;
 
-    double calculateCargoCapacity();
+    double calculateCargoCapacity() throws NoFileException;
 
-    double calculatePassengerCapacity();
+    double calculatePassengerCapacity() throws NoFileException;
 
-    void sort(List<T> airplanes, Comparator<T> comparator);
 
 }
